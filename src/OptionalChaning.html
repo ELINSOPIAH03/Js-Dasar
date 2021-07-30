@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //cara ribet nya
+        const person = {
+            addres:{
+                country:"indonesia"
+            }
+        };
+        // const person = {};
+        let country;
+
+        if(person.addres !== undefined && person.addres !== null){
+            country=person.addres.country;
+        }
+
+        document.writeln(`SUKSES`);
+        document.writeln(`<p>${country}</p>`);
+        document.writeln(`SUKSES`);
+        
+        //untung nya anda pake js ada cara yg namanya optional changing
+        country=person?.addres?.country;
+        document.writeln(`<p>${country}</p>`);
+
+    </script>
+</body>
+</html>

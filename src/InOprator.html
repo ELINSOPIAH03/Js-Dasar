@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //digunakan untuk penegcekan property didalam object 
+        const orang ={
+            firstName : "Elin",
+            lastName : "Sopiah"
+        }
+
+        const result = "firstName" in orang; //true
+        document.writeln(`<p>${result}</p>`);
+        
+        const pelajar ={
+            name : undefined,
+            kls : null
+        }
+
+        const result2 = "name" in pelajar; 
+        document.writeln(`<p>${result2}</p>`);
+
+        const result3 = "kls" in pelajar; 
+        document.writeln(`<p>${result3}</p>`);
+
+        //jadi akan ttp true walau nilai nya null atau undifined
+
+    </script>
+</body>
+</html>

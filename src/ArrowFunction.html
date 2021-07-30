@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const sayHello = (nama) => {
+            const say = `hello ${nama}`;
+            console.info(say);
+        }
+        sayHello("elin");
+
+        //jika function nya hanya satu baris, arrrow function bisa tanpa blok jadi lebiih sederhana
+        const sapa = (name) => console.info(`selamat datang ${name}`);
+        sapa("elma");
+        
+        //tadinya kaya gini
+        // const angka = (angka1,angka2) =>{
+            //     return angka1+angka2;
+            // }
+            
+        //dipermudah dengan arrow function return value tanpa return
+        let angka = (angka1,angka2)=>angka1+angka2;
+        console.info(angka(2,5));
+            
+        //arrow function tanpa kurung parameter jika param ya satu klo ksong atau >1 harus
+        let say = name => console.info(`halooo ${name}`);
+        say("elma");
+
+        //arrow function sebagai parameter
+        function giveMeName(callback) {
+            callback("elin");
+        }
+        giveMeName((name)=>console.info(`hello ${name}`));
+
+    </script>
+</body>
+</html>

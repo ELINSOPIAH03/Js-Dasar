@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function* createName() {
+            yield "elin";//yield dan * adalah kata kunci untuk generator
+            yield "sopiah";
+        }
+        let names = createName();
+        for (const name of names) {
+            console.log(name);
+        }
+
+        //lebih kompleks contoh
+        //lazy
+        function* bilGanjil(value) {
+            for (let i = 1; i <= value; i++) {
+                if (i % 2 === 1) {
+                    console.info(`yiled ${i}`);
+                    yield i;
+                }
+            }
+        }
+        
+        //eager
+        function bilGanjilArray(value) {
+            const result = [];
+            for (let i = 1; i <= value; i++) {
+                if (i % 2 === 1) {
+                    console.info(`yiled ${i}`);
+                    result.push(i);
+                }
+            }
+            return result;
+        }
+
+        let angkaganjil = bilGanjil(10);
+        for (const angka of angkaganjil) {
+            console.log(angka);
+        }
+    </script>
+</body>
+</html>

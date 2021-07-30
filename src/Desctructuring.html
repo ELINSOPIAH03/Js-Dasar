@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //mengabil data dari array yg biasa biasa
+        const names =["elin","arifah","elma"];
+        const a = names[0];
+        const b = names[1];
+        const c = names[2];
+
+        console.info(a);
+        console.info(b);
+        console.info(c);
+        
+        //kalo pake cara desctructuring array itu lebih mudah 
+        const namess =["elma","elin","arifah","lala","lili"];
+        const [firstName,middleName,lastName,...others] = namess;
+
+        console.info(firstName);
+        console.info(lastName);
+        console.info(middleName);
+        console.info(others);
+        
+        //mengambil data di object dengan cara yg sama
+        const person ={
+            name : "elin",
+            hair : "balck",
+            gender : "female",
+            address : {
+                street : "Jalanin dulu",
+                city : "Bogor",
+                countryc: "Indonesia"
+            },
+            hobby : "halu",
+            medsos : "arifaah"
+        };
+        const {name,hair,gender,address,...otherss}=person;
+        console.info(name);
+        console.info(hair);
+        console.info(gender);
+        console.info(address);
+        console.info(otherss);
+
+        // const {name,hair,gender,address:{street,city,countryc},...otherss}=person;
+        // console.info(name);
+        // console.info(hair);
+        // console.info(gender);
+        // console.info(street);
+        // console.info(city);
+        // console.info(countryc);
+        // console.info(otherss);
+
+        //biasanya dengan cara kaya gini
+        {
+            function displayPerson(person) {
+                console.log(person.firstName);
+                console.log(person.middleName);
+                console.log(person.lastName);
+            }
+            const person={
+                firstName : "elin",
+                middleName : "sopiah",
+                lastName : "nur arifah"
+            };
+            displayPerson(person)
+        }
+
+        //cara lebih simpel nya kaya gini namanya destructuringf di parameter 1
+        {
+            function displayPerson({firstName,middleName,lastName}) {
+                console.log(firstName);
+                console.log(middleName);
+                console.log(lastName);
+            }
+            const person={
+                firstName : "elin",
+                middleName : "sopiah",
+                lastName : "nur arifah"
+            };
+            displayPerson(person)
+        }
+        //destructuringf di parameter 2 pada array
+        {
+            function sum([angka1,angka2]) {
+                return angka1+angka2;
+            }
+            console.info(sum([10,10]));
+            console.info(sum([20,20]));
+        }
+        //desctructuring juga dukung default value array
+        {
+            const name=["elin","sopiah"];
+            const [firstName,middleName,lastName="nur arifah"]=name;
+            
+            console.info(firstName);
+            console.info(middleName);
+            console.info(lastName);
+        }
+        //esctructuring juga dukung default value juga bisa pada object
+        {
+            const person ={
+                firstName : "elin",
+                lastName : "arifah"
+            };
+            const {firstName:namaDepan,middleName="sopiah",lastName}=person;
+            console.info(namaDepan);
+            console.info(middleName);
+            console.info(lastName);
+        }
+
+
+
+    </script>
+</body>
+</html>

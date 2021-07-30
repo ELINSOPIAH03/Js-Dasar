@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //OR 
+        console.info("Hello"||"")//Hello
+        console.info(""||[])//[]
+        console.info("0"||"NOL")//0 kalo dua dua nya truthy maka bakal di ambil data kiri
+        console.info(0||"NOL")//NOL
+        console.info(null||"NULL")//NULL
+        console.info(undefined||"UNDIFINED")//UNDIFINED
+        console.info(0||false)//kalo dua dua nya data falsy maka bakal di ambil data yg paling kanan
+        
+        //biasanya digunain buat kaya gini
+        const orang = {
+            firstName : "Elin",
+            lastName : "Sopiah"
+        }
+        const data = orang.firstName || orang.lastName;
+        console.info(data);
+
+        //AND "akan mengambil nilai falsy"
+        console.info("Hello" && "")//""
+        console.info("" && [])//""
+        console.info("0" && "NOL")//NOL akan mengabil yang paling kanan jika keduanya truthy
+        console.info(0 && "NOL")//o
+        console.info(null && "NULL")//null
+        console.info(undefined && "UNDIFINED")//undifined
+        console.info(0 && false)//kalo dua dua nya data falsy maka bakal di ambil data yg paling kiri
+    
+    </script>
+</body>
+</html>

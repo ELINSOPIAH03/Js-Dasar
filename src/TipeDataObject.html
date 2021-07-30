@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const orang = {};//ini objevt kososng
+
+        //manmbahkan object 
+        orang["nama"] = "elin";
+        orang["domisili"] = "bogor";
+        orang["umur"] = 18;
+
+        console.table(orang);
+        
+        //cara dua
+        const orang2 ={
+            nama : "elin",
+            alamat : "cileungsi",
+            umur : 18
+        };
+        console.table(orang2);
+        
+        //cara manggil 2
+        console.table(`${orang2.nama}`);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //function sderhana
+        function kata() {
+            document.writeln("<p>Hello world</p>");
+        }
+        //pemanggilan function nya
+        kata();
+        kata();
+        kata();
+        
+        //function parameter
+        function name(firstName,lastName) {
+            document.writeln(`<p>Hello ${firstName} ${lastName}</p>`);
+        }
+        name("elin","sopiah");
+        name("elma","aryani");
+
+        //function return value
+        function sayHello(firstName,lastName) {
+            const say = `Hello ${firstName} ${lastName}`;
+            return say;
+        }
+        const result = sayHello("elin","sopiah");
+        document.writeln(`<p>${result}</p>`);
+        
+        //function dengan return banyak
+        function nilai(value) {
+            if (value > 90) {
+                return "A";
+            }else if(value > 80){
+                return "B";
+            }else if(value > 70){
+                return "C";
+            }else if(value > 0){
+                return "D";
+            }else{
+                return "E";
+            }
+        }
+        
+        const nilaiAkhir = nilai(85);
+        document.writeln(`<p>${nilaiAkhir}</p>`);
+        
+        //function dengan default parameter
+        function biodata(nama,kls,jenisKelamin="lainnya") {
+            document.writeln(`<p>nama : ${nama}, kelas : ${kls}, jenis kelamin : ${jenisKelamin}</p>`);
+            
+        }
+        biodata();
+        biodata("elin","12","perempuan")
+        biodata("lolo","12",)
+        biodata("lolok","12",null)//karena null sudah ada isi ya tapi null
+        
+        //function dengan rest parameter
+        function sum(name,...data) {
+            let total=0;
+            for (const item of data) {
+                total += item;
+            }
+            document.writeln(`<p>Total ${name} is ${total}</p>`);
+            
+        }
+        sum("apel",3,45,45,10,1,2);//rest param harus ada di belakang
+        sum("anggur",2,10,45);//rest param hanya boleh seklai dalam functio, dan res param tidak memiliki batasan
+    
+        //spread syntax 
+        const value = [2,3,10,20,5];
+        // sum("anggur",value); //kaya gini itu gakbisa karena gabisa langsng konversi
+        sum("lemon",...value);//nah makanya menggunakan spread syntax
+    </script>
+</body>
+</html>

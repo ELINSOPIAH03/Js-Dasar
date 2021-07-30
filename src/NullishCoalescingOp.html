@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ini cara ribetnya
+        let param;
+        let data=param;
+        if (data===undefined || data===null) {
+            data="Nilai sudah tidak undifined atau null"
+        }
+        alert(data);
+        document.writeln(data); 
+
+        //ini cara nullish coalescing
+        data = param??"Nilai default";
+        document.writeln(`<p>${data}</p>`);
+    </script>
+</body>
+</html>
